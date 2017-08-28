@@ -126,7 +126,7 @@ const replyMessage = (message, text, res) => {
 			  ]).then() : res.send({ reply: content })
 	  
       }else if(recastaiRes.entities.hasOwnProperty('jadwal')) {
-		  request('http://tipolindrachatbot.000webhostapp.com/api/v1/informasi/jadwal', (_err, _res, body) => {
+		  request('http://informtikabot.hol.es/api/v1/informasi/jadwal', (_err, _res, body) => {
 		  
           body = JSON.parse(body)
 		  
@@ -162,7 +162,7 @@ const replyMessage = (message, text, res) => {
 			  ]).then() : res.send({ reply: content })
 	    })  
 	  }else if(recastaiRes.entities.hasOwnProperty('kurikulum')) {
-		  request('http://tipolindrachatbot.000webhostapp.com/api/v1/informasi/kurikulum', (_err, _res, body) => {
+		  request('http://informtikabot.hol.es/api/v1/informasi/kurikulum', (_err, _res, body) => {
 		  
           body = JSON.parse(body)
 		  
@@ -220,7 +220,7 @@ const replyMessage = (message, text, res) => {
 			  ]).then() : res.send({ reply: content })
 	    })
 	  }else if(recastaiRes.entities.hasOwnProperty('organisasi')) {
-		request('http://tipolindrachatbot.000webhostapp.com/api/v1/informasi/struktur', (_err, _res, body) => {
+		request('http://informtikabot.hol.es/api/v1/informasi/struktur', (_err, _res, body) => {
 		  
            body = JSON.parse(body)
 
@@ -229,7 +229,7 @@ const replyMessage = (message, text, res) => {
 				type: 'text', content: 'oke, ini adalah struktur organisasi pada jurusan TI POLINDRA'
 			  },
 			  {
-				type: 'picture', content: body.data[0].link,  
+				type: 'picture', content: body.data[0].image,  
 			  },
 			  {
 			  type: 'quickReplies',
@@ -246,7 +246,7 @@ const replyMessage = (message, text, res) => {
 			  ]).then() : res.send({ reply: content })
 	    })
 	  }else if(recastaiRes.entities.hasOwnProperty('daftar')) {
-        request('http://tipolindrachatbot.000webhostapp.com/api/v1/informasi/pendaftaran', (_err, _res, body) => {
+        request('http://informtikabot.hol.es/api/v1/informasi/pendaftaran', (_err, _res, body) => {
 		  
               body = JSON.parse(body)
 
@@ -283,7 +283,7 @@ const replyMessage = (message, text, res) => {
 
         })
        } else if (recastaiRes.entities.hasOwnProperty('laboratorium')) {
-        request('http://tipolindrachatbot.000webhostapp.com/api/v1/informasi/lab', (_err, _res, body) => {
+        request('http://informtikabot.hol.es/api/v1/informasi/lab', (_err, _res, body) => {
           
               body = JSON.parse(body)
         
@@ -298,96 +298,96 @@ const replyMessage = (message, text, res) => {
 				  {
 					title: body.data[0].informasi,
 					subtitle: body.data[0].detail,
-					imageUrl: body.data[0].link,
+					imageUrl: body.data[0].image,
 					buttons: [
 					  {
 						title: 'Lihat Detail',
 						type: 'web_url', // 'postback', 'web_url' or 'phonenumber'
-						value: 'http://ti.polindra.ac.id/info/laboratorium/pemrograman/2013/06/30/46/Laboratorium-Pemrograman.html',
+						value: body.data[0].link,
 					  }
 					]
 				  },
 				  {
 					title: body.data[1].informasi,
 					subtitle: body.data[1].detail,
-					imageUrl: body.data[1].link,
+					imageUrl: body.data[1].image,
 					buttons: [
 					  {
 						title: 'Lihat Detail',
 						type: 'web_url', // 'postback', 'web_url' or 'phonenumber'
-						value: 'http://ti.polindra.ac.id/info/laboratorium/basisdata.html',
+						value: body.data[1].link,
 					  }
 					]
 				  },
 				  {
 					title: body.data[2].informasi,
 					subtitle: body.data[2].detail,
-					imageUrl: body.data[2].link,
+					imageUrl: body.data[2].image,
 					buttons: [
 					  {
 						title: 'Lihat Detail',
 						type: 'web_url', // 'postback', 'web_url' or 'phonenumber'
-						value: 'http://ti.polindra.ac.id/info/laboratorium/jaringan-komputer/2013/06/30/47/Laboratorium-Jaringan-Komputer.html',
+						value: body.data[2].link,
 					  }
 					]
 				  },
 				  {
 					title: body.data[3].informasi,
 					subtitle: body.data[3].detail,
-					imageUrl: body.data[3].link,
+					imageUrl: body.data[3].image,
 					buttons: [
 					  {
 						title: 'Lihat Detail',
 						type: 'web_url', // 'postback', 'web_url' or 'phonenumber'
-						value: 'http://ti.polindra.ac.id/info/laboratorium/sistem-operasi/2013/07/18/65/Laboratorium-Sistem-Operasi.html',
+						value: body.data[3].link,
 					  }
 					]
 				  },
 				  {
 					title: body.data[4].informasi,
 					subtitle: body.data[4].detail,
-					imageUrl: body.data[4].link,
+					imageUrl: body.data[4].image,
 					buttons: [
 					  {
 						title: 'Lihat Detail',
 						type: 'web_url', // 'postback', 'web_url' or 'phonenumber'
-						value: 'http://ti.polindra.ac.id/info/laboratorium/it-terapan.html',
+						value: body.data[4].link,
 					  }
 					]
 				  },
 				  {
 					title: body.data[5].informasi,
 					subtitle: body.data[5].detail,
-					imageUrl: body.data[5].link,
+					imageUrl: body.data[5].image,
 					buttons: [
 					  {
 						title: 'Lihat Detail',
 						type: 'web_url', // 'postback', 'web_url' or 'phonenumber'
-						value: 'http://ti.polindra.ac.id/info/laboratorium/komputasi-dasar.html',
+						value: body.data[5].link,
 					  }
 					]
 				  },
 				  {
 					title: body.data[6].informasi,
 					subtitle: body.data[6].detail,
-					imageUrl: body.data[6].link,
+					imageUrl: body.data[6].image,
 					buttons: [
 					  {
 						title: 'Lihat Detail',
 						type: 'web_url', // 'postback', 'web_url' or 'phonenumber'
-						value: 'http://ti.polindra.ac.id/info/laboratorium/multimedia.html',
+						value: body.data[6].link,
 					  }
 					]
 				  },
 				  {
 					title: body.data[7].informasi,
 					subtitle: body.data[7].detail,
-					imageUrl: body.data[7].link,
+					imageUrl: body.data[7].image,
 					buttons: [
 					  {
 						title: 'Lihat Detail',
 						type: 'web_url', // 'postback', 'web_url' or 'phonenumber'
-						value: 'http://ti.polindra.ac.id/info/laboratorium/elektronika-dan-sistem-digital/2013/07/17/51/Elektronika-Dan-Sistem-Digital.html',
+						value: body.data[7].link,
 					  }
 					]
 				  },
@@ -409,14 +409,14 @@ const replyMessage = (message, text, res) => {
         })
 		
 	  }else if(recastaiRes.entities.hasOwnProperty('dosen')) {
-        request('http://tipolindrachatbot.000webhostapp.com/api/v1/informasi/dosen', (_err, _res, body) => {
+        request('http://informtikabot.hol.es/api/v1/informasi/dosen', (_err, _res, body) => {
           
               body = JSON.parse(body)
         
               return message ? message.reply([
 			  {
 				  type: 'text',
-				  content: 'oke, ini informasi tentang staf pengajar yang ada di TI POLINDRA :)'
+				  content: 'oke, ini informasi tentang dosen pengajar yang ada di TI POLINDRA :)'
 			  },
 			  { 
 				type: 'carousel',
@@ -424,42 +424,42 @@ const replyMessage = (message, text, res) => {
 				  {
 					title: body.data[0].informasi,
 					subtitle: body.data[0].detail,
-					imageUrl: body.data[0].link,
+					imageUrl: body.data[0].image,
 				  },
 				  {
 					title: body.data[1].informasi,
 					subtitle: body.data[1].detail,
-					imageUrl: body.data[1].link,
+					imageUrl: body.data[1].image,
 				  },
 				  {
 					title: body.data[2].informasi,
 					subtitle: body.data[2].detail,
-					imageUrl: body.data[2].link,
+					imageUrl: body.data[2].image,
 				  },
 				  {
 					title: body.data[3].informasi,
 					subtitle: body.data[3].detail,
-					imageUrl: body.data[3].link,
+					imageUrl: body.data[3].image,
 				  },
 				  {
 					title: body.data[4].informasi,
 					subtitle: body.data[4].detail,
-					imageUrl: body.data[4].link,
+					imageUrl: body.data[4].image,
 				  },
 				  {
 					title: body.data[5].informasi,
 					subtitle: body.data[5].detail,
-					imageUrl: body.data[5].link,
+					imageUrl: body.data[5].image,
 				  },
 				  {
 					title: body.data[6].informasi,
 					subtitle: body.data[6].detail,
-					imageUrl: body.data[6].link,
+					imageUrl: body.data[6].image,
 				  },
 				  {
 					title: body.data[7].informasi,
 					subtitle: body.data[7].detail,
-					imageUrl: body.data[7].link,
+					imageUrl: body.data[7].image,
 				  },
 				  ],
 			  },
